@@ -17,6 +17,6 @@ WORKDIR /var/www/cgi-bin
 RUN make
 RUN chmod 755 hello.cgi
 RUN rm Makefile hello.cpp
-RUN rm -rf /var/lock/apache.*
+RUN ls -la /var/lock/apache2
+RUN rm -rf /var/lock/apache2.*
 CMD apache2ctl -D FOREGROUND
-
