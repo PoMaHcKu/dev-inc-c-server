@@ -2,29 +2,36 @@
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cgicc/CgiDefs.h>
+#include <cgicc/Cgicc.h>
+#include <cgicc/HTTPHTMLHeader.h>
+#include <cgicc/HTMLClasses.h>
 using namespace std;
-void set_content_type(string content_type) {
-  cout << "Content-type: " << content_type << "\r\n\r\n";
-}
-void set_page_title(string title) {
-  cout << "<title>" << title << "</title>\n";
-}
-void h1_text(string text) {
-  cout << text << "\n";
-}
-int main() {
-  string name;
-  set_content_type("text/html");
-  cout << "<!doctype html>\n";
-  cout << "<html lang=\"en\">\n";
-  cout << "<head>\n";
-  set_page_title("Test");
-  cout << "</head>\n";
-  cout << "<body>\n";
-  cout << "<p>";
-  cout << "Name was not provided.";
-  cout << "</p>\n";
-  cout << "</body>\n";
-  cout << "</html>";
-  return 0;
+using namespace cgicc;
+
+int main()
+{
+    Cgicc form;
+    string name;
+
+    cout << "Content-type:text/html\r\n\r\n";
+    cout << "<html>\n";
+    cout << "<head>\n";
+    cout << "<title>Ggi Server</title>\n";
+    cout << "</head>\n";
+    cout << "<body>\n";
+    cout << "<p>";
+    
+    name = form("name");
+    if (!name.empty()) {
+    	cout << "Name is " << name << "!\n";
+    } else {
+    	cout << "Name wan not provided!";
+    }
+    
+    cout << "</p>\n";
+    cout << "</body>\n";
+    cout << "</html>\n";
+
+    return 0;
 }
