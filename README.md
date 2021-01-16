@@ -6,7 +6,7 @@
 
 ###### C++ (cgicc)
 ###### HTML/CSS
-###### Google cloud (linux vm)
+###### Google cloud (linux vm, vim)
 ###### Docker
 ###### Apache2 Web Server
 
@@ -17,12 +17,12 @@
 ```
 git clone https://github.com/PoMaHcKu/dev-inc-c-server
 ```
-###### Create index.html file in the root of project directory. The file must has a html form with post method. And form must has a input element (or input area) and submit button in the html form.
+###### Create index.html file in the root of project directory. The file must has a html form with post method. And form must has a input element (or input area) with attribute name and submit button in the html form.
 ###### Edit file script.cpp. There is the function called getInt in the script file. Write your code in this function.
 ###### Create a CSS style for the form. FOR your taste.
 ###### Create repository and push the project. You need it later.
 
-### 2. Get started
+### 2. Deploy
 ###### To be continue...
 
 Go to the directory with project and write the commands bellow:

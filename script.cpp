@@ -9,6 +9,10 @@
 using namespace std;
 using namespace cgicc;
 
+int getLength(string name) {
+    return name.size();
+}
+
 int main()
 {
     Cgicc form;
@@ -24,11 +28,10 @@ int main()
     
     name = form("name");
     if (!name.empty()) {
-    	cout << "Name is " << name << "!\n";
+    	cout << "Count characters of your text is " << getLength(name) << "\n";
     } else {
-    	cout << "Name wan not provided!";
-    }
-    
+    	cout << "Text is not provided!\n";
+    }	
     cout << "</p>\n";
     cout << "</body>\n";
     cout << "</html>\n";
