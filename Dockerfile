@@ -12,9 +12,9 @@ copy conf/cgid.load /etc/apache2/mods-enabled/
 copy conf/cgi.load /etc/apache2/mods-enabled/
 RUN mkdir /var/www/cgi-bin
 copy Makefile /var/www/cgi-bin/
-copy hello.cpp /var/www/cgi-bin/
+copy script.cpp /var/www/cgi-bin/
 WORKDIR /var/www/cgi-bin
 RUN make
-RUN chmod 755 hello.cgi
-RUN rm Makefile hello.cpp
+RUN chmod 755 script.cgi
+RUN rm Makefile script.cpp
 CMD apache2ctl -D FOREGROUND
