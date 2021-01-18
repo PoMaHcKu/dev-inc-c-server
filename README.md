@@ -1,4 +1,4 @@
-# C++ WebServer
+# C++ Web App
 
 ### 0. Tools
 
