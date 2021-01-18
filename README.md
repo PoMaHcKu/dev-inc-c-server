@@ -40,9 +40,9 @@ git clone https://github.com/PoMaHcKu/dev-inc-c-server
 
 ### 3. Deploy
 ###### Go to your git-repository and copy repository url
-###### Enter in terminal command ```git clone <repository-url>```, where <repository-url> is your url (format is "https://github.com/username/reponame/").
+###### Enter in terminal command ```git clone <repository-url>```, where repository-url is your url (format is "https://github.com/username/reponame/").
 ###### Command "ls" show directories and files in the current directory, command "cd" move you in the selected directory.
-###### Type ```cd dirname``` for go to the repository directory.
+###### Type ```cd dirname``` to go to the repository directory.
 ###### Now, open Dashboard (don't close terminal) and select you instance in resources section. Copy the external ip address.
 ###### Open the terminal and type ```vim index.html``` (How to use vim see here - https://www.howtoforge.com/vim-basics#:~:text=To%20start%20using%20vim%2C%20just,that%20you%20want%20to%20edit.&text=%5Benter%5D%20means%20to%20press%20the,are%20in%20insert%20mode%20now.)
 ###### Replace "localhost" to external ip address in html form.
