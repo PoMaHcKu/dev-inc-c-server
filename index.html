@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
+    <meta content="width=device-width" name="viewport"/>
     <title>Antiplagiat Powered by Dev Incubator</title>
     <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet"/>
     <style type="text/css">
@@ -72,22 +72,51 @@
       }
     </style>
   </head>
-  <body style="background-image: url('https://images.pexels.com/photos/348688/pexels-photo-348688.jpeg?cs=srgb&dl=pexels-jatuphon-buraphon-348688.jpg&fm=jpg');">
+  <body style="background-color: blue;">
     <header>
       <h1>Welcome to the Dev Incubator</h1>
     </header>
 
     <section id="contact">
       <h3>Real AI powered by Dev Incubator</h3>
-      <form id="contactForm" action="http://localhost:8080/cgi-bin/script.cgi">
-        <label for="name">Text:</label><br/>
-        <textarea id="name"
-                  name="name"
-                  placeholder="Some text..."
-        ></textarea>
+      <div id="text">
+        <label for="value">Text:</label><br/>
+        <textarea id="value" name="value" placeholder="Some text..."></textarea>
         <br/><br/>
-        <input type="submit" value="Submit"/>
-      </form>
+	      <button id="send">Submit"</button>
+      </div>
+    </section>
+    <section>
+    	<div>
+	        <h3>Result...</h3>
+		    <h3 id="result"></h3>
+	    </div>
+    	<script>
+		    document.addEventListener("DOMContentLoaded", function () {
+			
+			    const sendButton = document.getElementById('send')
+			    sendButton.addEventListener('click', function () {
+				    let payload = 'name=' + encodeURIComponent(document.getElementById('value').value)
+				    
+				    const request = new XMLHttpRequest()
+				    request.open('POST', 'http://localhost:8080/cgi-bin/script.cgi', true)
+				    
+				    request.addEventListener('readystatechange', function () {
+				    	
+					    if ((request.readyState === 4) && (request.status === 200)) {
+						    console.log(request.responseText)
+						    let result = document.getElementById('result')
+						    result.innerHTML = request.responseText
+					    } else {
+						    console.log('ops...!')
+					    }
+				    })
+				    
+				    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+				    request.send(payload)
+			    })
+		    })
+	</script>
     </section>
   </body>
 </html>
